@@ -114,6 +114,7 @@ header {
 
 p#notice {
   font-size:30px;
+  color:white;
 }
 
 .page-top-btn {
@@ -160,9 +161,4 @@ p#notice {
   &:hover{
     opacity:0.7;
   }
-}
-
-.flash{
-  color:white;
-  padding-top:10px;
 }
