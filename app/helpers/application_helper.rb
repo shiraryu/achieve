@@ -1,5 +1,5 @@
 module ApplicationHelper
-  def_profile_image(user)
+  def profile_image(user)
     unless  user.provider.blank?
       image_url = user.image_url
     else
