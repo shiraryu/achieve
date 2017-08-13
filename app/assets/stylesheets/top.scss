@@ -108,7 +108,7 @@ input[type="submit"].btn-block{
 
 header {
   ul {
-   padding-left: 10px;   
+   padding-left: 10px;
   }
 }
 
@@ -161,4 +161,22 @@ p#notice {
   &:hover{
     opacity:0.7;
   }
+}
+
+ul{
+  padding: 0;
+}
+
+.child li {                                 /* コメント画面クラス child right left */
+  padding-top: 13px;
+  border-bottom: 1px dotted #ccc;
+  list-style-type: none;
+}
+
+.right {
+text-align: right;
+}
+
+.left {
+text-align: left;
 }
