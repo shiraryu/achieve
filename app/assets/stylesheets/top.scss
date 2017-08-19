@@ -180,7 +180,11 @@ text-align: right;
 .left {
 text-align: left;
 }
-.container-child{
+.container-child{                       /* User一覧 */
+  img{
+    max-width: 48px;
+    max-height: 48px;
+  }
   word-wrap: break-word;
   width: 200px;
   height: 170px;
