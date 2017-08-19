@@ -5,6 +5,6 @@ class UsersController < ApplicationController
 
   def show
     @user = User.find(params[:id])
-    @users = User.find(@user.followers.ids, @user.followed_users.ids)
+    @users = User.all
   end
 end

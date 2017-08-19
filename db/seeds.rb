@@ -8,22 +8,24 @@
 
 n = 1
 
-while n <= 100
+while n <= 20
   email = Faker::Internet.email
   password = "password"
-  name = Faker::Name.name 
+  name = Faker::Name.name
   User.create!(
     email: email,
     password: password,
     password_confirmation: password,
     name: name,
+    uid: n,
+    provider: n
     )
-  
+
   Blog.create(
     title: "あああ",
     content: "hoge",
     user_id: n
   )
   n = n + 1
-  
+
 end
