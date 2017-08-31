@@ -8,6 +8,7 @@ class BlogsController < ApplicationController
   def show
     @comment = @blog.comments.build   # 入力フォーム用インスタンス
     @comments = @blog.comments        # 一覧用インスタンス
+    Notification.find(params[:notification_id]).update(read: true) if params[:notification_id]  #通知既読処理
   end
   def new
     if params[:back]
