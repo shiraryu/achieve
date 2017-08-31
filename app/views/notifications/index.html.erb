@@ -1,14 +1,18 @@
 <h2>お知らせ</h2>
-<ul>
-  <% @notifications.each do |notification| %>
-  <hr>
-    <li>
-      <span><%= notification.read %></span>
-      <p>
-        <%= notification.comment.user.try(:name) %>さんが
-        あなたのブログ（<%= link_to "#{notification.comment.blog.title}", blog_path(notification.comment.blog, notification_id: notification.id) %>）にコメントしました。
-      </p>
-      <p><%= notification.created_at %></p>
-    </li>
-  <% end %>
-</ul>
+<div class = "container">
+  <div class = "wrapper col-md-offset-1 col-sm-10">
+    <ul style="text-align: left;">
+      <% @notifications.each do |notification| %>
+      <hr>
+      <li style="list-style-type: none;">
+        <span><%= read_state(notification.read) %></span> <!-- Notifications Helper内のposted_timeメソッド呼び出し-->
+        <p>
+          <%= notification.comment.user.try(:name) %>さんが
+          あなたのブログ『<%= link_to "#{notification.comment.blog.title}", blog_path(notification.comment.blog, notification_id: notification.id) %>』にコメントしました。
+        </p>
+        <p><%= posted_time(notification.created_at) %>前</p> <!-- Notifications Helper内のposted_timeメソッド呼び出し-->
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
